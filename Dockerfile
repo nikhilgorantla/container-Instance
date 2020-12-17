@@ -9,7 +9,7 @@ RUN ["chmod", "+x", "start"]
 RUN set -ex \
   && echo "http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
   && echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
-  # && echo "http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
+  && echo "http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
   && apk update \
   && apk add --no-cache \
   apache2-utils \
@@ -24,7 +24,8 @@ RUN set -ex \
   ngrep \
   openssl \
   vim \
-  kubectl
+  kubectl \
+  aws-cli
 
 # CMD ["/bin/bash","-l"]
 
